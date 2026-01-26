@@ -21,7 +21,7 @@ if [[ "$OS" == "Linux" ]]; then
         echo "Неподдерживаемая архитектура: $ARCH"
         exit 1
     fi
-if [[ "$OS" == "Darwin" ]]; then  # macOS
+elif [[ "$OS" == "Darwin" ]]; then  # macOS
     echo "Скачиваю версию для macOS..."
     curl -L -o fnd https://github.com/Dan-Egorov/CommandFinder/raw/5876828320f137d0e19bf0bf7712557c49e15f8c/fnd
 fi
