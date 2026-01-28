@@ -5,12 +5,12 @@
 #include "help.h"
 
 void show_help(const char *program_name){
-    printf("Использование: %s [ОПЦИИ] <аргументы>\n", program_name);
-    printf("Опции:\n");
-    printf("  -h, --help     Показать эту справку\n");
-    printf("  -v, --version  Показать версию\n");
-    printf("  -s    Show list of commands");
-    printf("  -n [numb] -s    Chose size of command's list");
+    printf("Using: %s [OPTIONS] <args>\n", program_name);
+    printf("Options:\n");
+    printf("  -h, --help     Show this certificate\n");
+    printf("  -v, --version  Show version\n");
+    printf("  -f, [numb]    Choose which number to count from\n");
+    printf("  -t, [numb]    Choose what number to count to\n");
 }
 
 int isnum(char* stroke){
