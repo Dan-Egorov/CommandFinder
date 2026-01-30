@@ -13,10 +13,8 @@ echo ""
 if [[ "$OS" == "Linux" ]]; then
     if [[ "$ARCH" == "x86_64" ]]; then
         echo "Скачиваю версию для Linux x64..."
-        curl -L -o fnd https://github.com/ВАШ_НИК/myapp/releases/latest/download/myapp-linux-x64
     elif [[ "$ARCH" == "aarch64" ]] || [[ "$ARCH" == "arm64" ]]; then
         echo "Скачиваю версию для Linux ARM..."
-        curl -L -o fnd https://github.com/ВАШ_НИК/myapp/releases/latest/download/myapp-linux-arm
     else
         echo "Неподдерживаемая архитектура: $ARCH"
         exit 1
