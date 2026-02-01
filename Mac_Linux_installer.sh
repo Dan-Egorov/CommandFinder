@@ -21,7 +21,7 @@ if [[ "$OS" == "Linux" ]]; then
     fi
 elif [[ "$OS" == "Darwin" ]]; then  # macOS
     echo "Скачиваю версию для macOS..."
-    curl -L -o fnd https://github.com/Dan-Egorov/CommandFinder/raw/cb310b7c4af1cde60a68cea1312c0ed2be661ed2/fnd
+    curl -L -o fnd https://github.com/Dan-Egorov/CommandFinder/raw/797a1397e4d1eed0bd689a8e197400e99de962d7/fnd
 fi
 # исполняемый
 chmod +x fnd
