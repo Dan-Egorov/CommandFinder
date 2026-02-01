@@ -59,11 +59,13 @@ lst_t readCommands(){
     return list_of_cmd;
 }
 
-void writeCommands(lst_t list, int size_from_cmd, int size_to_cmd){
+void writeCommands(lst_t list, int size_from_cmd, int size_to_cmd, char* word){
     int num = 0;
     for (int i = (list.len-1-size_from_cmd); i >= (list.len-size_to_cmd); i--){
-        printf("%d: %s", num, list.list[i].cmd);
-        num++;
+        if (strstr(list.list[i].cmd, word) != NULL){
+            printf("%d: %s", num, list.list[i].cmd);
+            num++;
+        }
     }
     for (int i = 0; i < list.len; i++){
         free(list.list[i].cmd);

@@ -15,4 +15,4 @@ typedef struct lst
 void show_help(const char *program_name);
 int isnum(char* stroke);
 lst_t readCommands();
-void writeCommands(lst_t list, int size_from_cmd, int size_to_cmd);
+void writeCommands(lst_t list, int size_from_cmd, int size_to_cmd, char* word);

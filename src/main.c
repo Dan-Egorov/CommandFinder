@@ -6,6 +6,7 @@
 int main(int argc, char *argv[]) {
     int size_to = 20;
     int size_from = 0;
+    char word[1024];
     
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
@@ -29,7 +30,11 @@ int main(int argc, char *argv[]) {
                 printf("Real big number");
                 return 1;
             }
-        }else if(!(isnum(argv[i]))){
+        }
+        else if((strcmp(argv[i], "-s") == 0) && ((argc-1) > i)){
+            strcpy(word, argv[i+1]);
+        }
+        else if(!(isnum(argv[i])) && !(strstr(argv[i], "-") == NULL)){
             printf("Unknown flag: %s\n", argv[i]);
             return 1;
         }
@@ -37,6 +42,6 @@ int main(int argc, char *argv[]) {
 
     lst_t list_cmd;
     list_cmd = readCommands();
-    writeCommands(list_cmd, size_from, size_to);
+    writeCommands(list_cmd, size_from, size_to, word);
     return 0;
 }
