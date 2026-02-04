@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
     int size_to = 20;
     int size_from = 0;
-    char word[1024];
+    char word[1024] = {'\0'};
     
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
