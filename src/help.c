@@ -30,11 +30,22 @@ lst_t readCommands(){
     lst_t list_of_cmd;
     list_of_cmd.list = malloc(cap_lst*sizeof(cmd_t));
 
-    char path[1024];
-    snprintf(path, sizeof(path), "%s/.zsh_history", home);
+    char path_Mac[1024];
+    char path_Linux[1024];
+    snprintf(path_Mac, sizeof(path_Mac), "%s/.zsh_history", home);
+    snprintf(path_Linux, sizeof(path_Linux), "%s/.bash_history", home);
 
-    FILE *fl = fopen(path, "r");
-    if (!fl){
+    FILE *fl_Mac = fopen(path_Mac, "r");
+    FILE *fl_Linux = fopen(path_Linux, "r");
+    FILE *fl;
+
+    if (fl_Mac){
+        fl = fl_Mac;
+        fclose(fl_Linux);
+    }else if(fl_Linux){
+        fl = fl_Linux;
+        fclose(fl_Mac);
+    }else{
         printf("Error");
         exit(0);
     }
