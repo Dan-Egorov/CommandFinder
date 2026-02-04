@@ -43,7 +43,6 @@ lst_t readCommands(){
         snprintf(path, sizeof(path), "%s/%s", home, file_name[i]);
         fl = fopen(path, "r");
         if (fl){
-            printf("YES");
             break;
         }
     }
@@ -71,7 +70,10 @@ lst_t readCommands(){
 void writeCommands(lst_t list, int size_from_cmd, int size_to_cmd, char* word){
     int num = 0;
     for (int i = (list.len-1-size_from_cmd); i >= (list.len-size_to_cmd); i--){
-        if (strstr(list.list[i].cmd, word) != NULL){
+        if (strstr(list.list[i].cmd, word) != NULL && (word != NULL)){
+            printf("%d: %s", num, list.list[i].cmd);
+            num++;
+        }else if(word == NULL){
             printf("%d: %s", num, list.list[i].cmd);
             num++;
         }
