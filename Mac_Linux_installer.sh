@@ -11,8 +11,9 @@ echo "Обнаружена система: $OS $ARCH"
 echo ""
 
 if [[ "$OS" == "Linux" ]]; then
-    if [[ "$ARCH" == "x86_64" ]]; then
+    if [[ "$ARCH" == "x86_64" ]]; then # Linux
         echo "Скачиваю версию для Linux x64..."
+        curl -L -o fnd https://github.com/Dan-Egorov/CommandFinder/raw/aaf18e987250da97f6a51e92d5500f905aae4730/Linux_bin/fnd
     elif [[ "$ARCH" == "aarch64" ]] || [[ "$ARCH" == "arm64" ]]; then
         echo "Скачиваю версию для Linux ARM..."
     else
@@ -21,7 +22,7 @@ if [[ "$OS" == "Linux" ]]; then
     fi
 elif [[ "$OS" == "Darwin" ]]; then  # macOS
     echo "Скачиваю версию для macOS..."
-    curl -L -o fnd https://github.com/Dan-Egorov/CommandFinder/raw/797a1397e4d1eed0bd689a8e197400e99de962d7/fnd
+    curl -L -o fnd https://github.com/Dan-Egorov/CommandFinder/raw/aaf18e987250da97f6a51e92d5500f905aae4730/Mac_bin/fnd
 fi
 # исполняемый
 chmod +x fnd
